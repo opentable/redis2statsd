@@ -27,8 +27,8 @@
             "format": "{REDIS_ADDRESS}.{METRIC}"
         },
         "redis": {
-            "metrics_delta": ["expired_keys", "evicted_keys", "keyspace_hits", "keyspace_misses", "total_connections_received", "total_commands_processed"],
-            "metrics_static": ["instantaneous_ops_per_sec", "used_memory", "mem_fragmentation_ratio", "connected_clients", "rejected_connections"],
+            "metrics_delta": [],
+            "metrics_static": ["instantaneous_input_kbps", "instantaneous_output_kbps", "used_memory", "connected_slaves", "master_last_io_seconds_ago"],
             "slave_metrics": true,
             "addresses" : [
                 "sc-na-avstor-inv-redis-relayln.otsql.opentable.com",
