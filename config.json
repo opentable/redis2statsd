@@ -55,14 +55,9 @@
             "slave_metrics": true,
             "addresses" : [
                 "sc-na-avstor-inv-redis-relayln.otsql.opentable.com",
-                "ln-na-avstor-inv-redis-01.otsql.opentable.com",
-                "ln-na-avstor-inv-redis-02.otsql.opentable.com",
 
                 "sc-ap-avstor-inv-redis-relayln.otsql.opentable.com",
-                "ln-ap-avstor-inv-redis-01.otsql.opentable.com",
-                "ln-ap-avstor-inv-redis-02.otsql.opentable.com",
 
-                "ln-eu-avstor-inv-redis-relaysc.otsql.opentable.com",
                 "sc-eu-avstor-inv-redis-01.otsql.opentable.com",
                 "sc-eu-avstor-inv-redis-02.otsql.opentable.com"
             ]
@@ -73,6 +68,35 @@
         },
         "statsd" : {
             "host": "statsd-prod-sc.otenv.com",
+            "port": "8125",
+            "debug": false
+        }
+    },
+
+    "prod-ln" : {
+        "metric": {
+            "format": "{REDIS_ADDRESS}.{METRIC}"
+        },
+        "redis": {
+            "metrics_delta": [],
+            "metrics_static": ["instantaneous_input_kbps", "instantaneous_output_kbps", "used_memory", "connected_slaves", "master_last_io_seconds_ago"],
+            "slave_metrics": true,
+            "addresses" : [
+                "ln-na-avstor-inv-redis-01.otsql.opentable.com",
+                "ln-na-avstor-inv-redis-02.otsql.opentable.com",
+
+                "ln-ap-avstor-inv-redis-01.otsql.opentable.com",
+                "ln-ap-avstor-inv-redis-02.otsql.opentable.com",
+
+                "ln-eu-avstor-inv-redis-relaysc.otsql.opentable.com"
+            ]
+        },
+        "logs": {
+            "level": "warn",
+            "path": "/var/log/redis2statsd"
+        },
+        "statsd" : {
+            "host": "statsd-prod-ln.otenv.com",
             "port": "8125",
             "debug": false
         }
