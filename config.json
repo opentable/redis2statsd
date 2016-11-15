@@ -4,16 +4,19 @@
             "format": "{REDIS_ADDRESS}.{METRIC}"
         },
         "redis": {
-            "metrics_delta": ["expired_keys", "evicted_keys", "keyspace_hits", "keyspace_misses", "total_connections_received", "total_commands_processed"],
-            "metrics_static": ["instantaneous_ops_per_sec", "used_memory", "mem_fragmentation_ratio", "connected_clients", "rejected_connections"],
-            "slave_metrics": true
+            "metrics_delta": [],
+            "metrics_static": ["instantaneous_input_kbps", "instantaneous_output_kbps", "used_memory", "connected_slaves", "master_last_io_seconds_ago"],
+            "slave_metrics": true,
+            "addresses" : [
+                "ci-ap-avstor-inv-redis-relayln.qasql.opentable.com"
+            ]
         },
         "logs": {
             "level": "debug",
             "path": "./logs"
         },
         "statsd": {
-            "host": "localhost",
+            "host": "statsd-qa-sf.otenv.com",
             "port": "8125",
             "debug": true
         }
@@ -26,14 +29,29 @@
         "redis": {
             "metrics_delta": ["expired_keys", "evicted_keys", "keyspace_hits", "keyspace_misses", "total_connections_received", "total_commands_processed"],
             "metrics_static": ["instantaneous_ops_per_sec", "used_memory", "mem_fragmentation_ratio", "connected_clients", "rejected_connections"],
-            "slave_metrics": true
+            "slave_metrics": true,
+            "addresses" : [
+                "sc-na-avstor-inv-redis-relayln.otsql.opentable.com",
+                "ln-na-avstor-inv-redis-01.otsql.opentable.com",
+                "ln-na-avstor-inv-redis-02.otsql.opentable.com",
+
+                "sc-ap-avstor-inv-redis-relayln.otsql.opentable.com",
+                "ln-ap-avstor-inv-redis-01.otsql.opentable.com",
+                "ln-ap-avstor-inv-redis-02.otsql.opentable.com",
+
+                "ln-eu-avstor-inv-redis-relaysc.otsql.opentable.com",
+                "sc-eu-avstor-inv-redis-01.otsql.opentable.com",
+                "sc-eu-avstor-inv-redis-02.otsql.opentable.com"
+            ]
         },
         "logs": {
             "level": "warn",
             "path": "/var/log/redis2statsd"
         },
         "statsd" : {
-           "host": "statsd.productionaddress.com"
+            "host": "statsd-prod-sc.otenv.com",
+            "port": "8125",
+            "debug": false
         }
     }
 }
