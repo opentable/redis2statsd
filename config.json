@@ -8,6 +8,29 @@
             "metrics_static": ["instantaneous_input_kbps", "instantaneous_output_kbps", "used_memory", "connected_slaves", "master_last_io_seconds_ago"],
             "slave_metrics": true,
             "addresses" : [
+                "localhost"
+            ]
+        },
+        "logs": {
+            "level": "debug",
+            "path": "./logs"
+        },
+        "statsd": {
+            "host": "localhost",
+            "port": "8125",
+            "debug": true
+        }
+    },
+
+    "ci-sf" : {
+        "metric": {
+            "format": "{REDIS_ADDRESS}.{METRIC}"
+        },
+        "redis": {
+            "metrics_delta": [],
+            "metrics_static": ["instantaneous_input_kbps", "instantaneous_output_kbps", "used_memory", "connected_slaves", "master_last_io_seconds_ago"],
+            "slave_metrics": true,
+            "addresses" : [
                 "ci-ap-avstor-inv-redis-relayln.qasql.opentable.com"
             ]
         },
@@ -22,7 +45,7 @@
         }
     },
 
-    "production" : {
+    "prod-sc" : {
         "metric": {
             "format": "{REDIS_ADDRESS}.{METRIC}"
         },

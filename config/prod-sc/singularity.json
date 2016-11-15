@@ -1,0 +1,11 @@
+{
+  "requestId": "inv-redis-repl-monitor-prod-sc",
+  "resources": {
+    "cpus": 0.1,
+    "memoryMb": 256,
+    "numPorts": 1
+  },
+  "env": {
+    "ON_MESOS": "true"
+  }
+}
