@@ -14,7 +14,24 @@ We chose StatsD because it's very flexible and can be plugged with Graphite, Lib
 
 ## Running
 
-## OT inv-redis-repl-monitor service deployment in mesos
+```
+usage: node lib/Redis2StatsD.js ["HOST:PORT" ...]
+
+    --interval=INTERVAl         Redis consult interval
+    --environment=ENVIRONMENT   Select config.json environment configuration
+
+$node lib/Redis2StatsD.js localhost --interval=60
+```
+
+## Extension to original design
+Inv-redis-repl-monitor is a redis replication monitoring service which runs in mesos.
+This service was forked and branched from the original Redis2StatsD repo.
+We includes the mesos deployment code for ci-sf, prod-sc, and prod-ln, and custom metrics for monitoring replication lag.
+The service collects info stats from a set of redis instances and emits the stats to statsd at regular intervals.
+These stats are used for visualizing performance in grafana and for generating uchiwa alerts if performance is not acceptable.
+
+## Service deployment in mesos
+
 ```
 git clone https://github.com/opentable/redis2statsd
 cd redis2statsd
@@ -25,14 +42,6 @@ otpl-deploy -d inv-redis-repl-monitor prod-sc latest
 otpl-deploy -d inv-redis-repl-monitor prod-ln latest
 ```
 
-```
-usage: node lib/Redis2StatsD.js ["HOST:PORT" ...]
-
-    --interval=INTERVAl         Redis consult interval
-    --environment=ENVIRONMENT   Select config.json environment configuration
-
-$node lib/Redis2StatsD.js localhost --interval=60
-```
 
 
 
