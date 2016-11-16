@@ -15,6 +15,7 @@ We chose StatsD because it's very flexible and can be plugged with Graphite, Lib
 ## Running
 
 ## OT inv-redis-repl-monitor service deployment in mesos
+```
 git clone https://github.com/opentable/redis2statsd
 cd redis2statsd
 docker build -t docker.otenv.com/inv-redis-repl-monitor:0.2 .
@@ -22,6 +23,7 @@ docker tag docker.otenv.com/inv-redis-repl-monitor:0.2 docker.otenv.com/inv-redi
 docker push docker.otenv.com/inv-redis-repl-monitor
 otpl-deploy -d inv-redis-repl-monitor prod-sc latest
 otpl-deploy -d inv-redis-repl-monitor prod-ln latest
+```
 
 ```
 usage: node lib/Redis2StatsD.js ["HOST:PORT" ...]
