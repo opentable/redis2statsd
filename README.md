@@ -34,6 +34,7 @@ These stats are used for visualizing performance in grafana and may be used for 
 ```
 git clone https://github.com/opentable/redis2statsd
 cd redis2statsd
+git checkout replication-monitor
 docker build -t docker.otenv.com/inv-redis-repl-monitor:0.2 .
 docker tag docker.otenv.com/inv-redis-repl-monitor:0.2 docker.otenv.com/inv-redis-repl-monitor:latest
 docker push docker.otenv.com/inv-redis-repl-monitor
