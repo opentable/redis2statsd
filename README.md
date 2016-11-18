@@ -26,7 +26,7 @@ $node lib/Redis2StatsD.js localhost --interval=60
 ## Extension to original design
 Inv-redis-repl-monitor is a redis replication monitoring service which runs in mesos.
 The code for the service was forked from the original Redis2StatsD repo, and we added the mesos deployment code for ci-sf, prod-sc, and prod-ln, and custom metrics for monitoring replication lag.
-The service collects info stats from a set of redis instances and emits the stats to statsd at regular intervals.
+The service collects stats from a set of redis instances using the redis info command, and emits the stats to statsd at regular intervals.
 These stats are used for visualizing performance in grafana and may be used for generating uchiwa alerts if performance is not acceptable.
 
 ## Service deployment in mesos
