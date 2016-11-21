@@ -54,6 +54,9 @@
             "metrics_static": ["instantaneous_input_kbps", "instantaneous_output_kbps", "used_memory", "connected_slaves", "master_last_io_seconds_ago"],
             "slave_metrics": true,
             "addresses" : [
+                "sc-na-avstor-inv-redis-01.otsql.opentable.com",
+                "sc-ap-avstor-inv-redis-01.otsql.opentable.com",
+
                 "sc-na-avstor-inv-redis-relayln.otsql.opentable.com",
 
                 "sc-ap-avstor-inv-redis-relayln.otsql.opentable.com",
@@ -82,6 +85,8 @@
             "metrics_static": ["instantaneous_input_kbps", "instantaneous_output_kbps", "used_memory", "connected_slaves", "master_last_io_seconds_ago"],
             "slave_metrics": true,
             "addresses" : [
+                "ln-eu-avstor-inv-redis-01.otsql.opentable.com",
+
                 "ln-na-avstor-inv-redis-01.otsql.opentable.com",
                 "ln-na-avstor-inv-redis-02.otsql.opentable.com",
 
